@@ -46,5 +46,7 @@ app.use("/",authRoutes);
 
 
 app.listen(process.env.PORT,process.env.IP,function(){
+	
+//	app.listen(8200,function(){
     console.log("YelpCamp Server Started");
 });
