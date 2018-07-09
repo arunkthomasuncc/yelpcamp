@@ -6,9 +6,9 @@ mongoose.Promise = global.Promise;
 var flash=require("connect-flash");
 
 app.use(bodyParser.urlencoded({extended:true}));
-
+var DATABASEURL= process.env.DATABASEURL || 'mongodb://localhost/yelp_camp'
 //mongoose.connect('mongodb://localhost/yelp_camp');
-mongoose.connect('mongodb://arun:Welcome1@ds231961.mlab.com:31961/yelpcamp');
+mongoose.connect(DATABASEURL);
 
 app.use(express.static(__dirname + "/public"));
 app.set("view engine","ejs");
@@ -47,8 +47,8 @@ app.use("/campgrounds",campgroundRoutes);
 app.use("/",authRoutes);
 
 
-app.listen(process.env.PORT,process.env.IP,function(){
+//app.listen(process.env.PORT,process.env.IP,function(){
 	
-//	app.listen(8200,function(){
+	app.listen(8200,function(){
     console.log("YelpCamp Server Started");
 });
