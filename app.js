@@ -7,7 +7,9 @@ var flash=require("connect-flash");
 
 app.use(bodyParser.urlencoded({extended:true}));
 
-mongoose.connect('mongodb://localhost/yelp_camp');
+//mongoose.connect('mongodb://localhost/yelp_camp');
+mongoose.connect('mongodb://arun:Welcome1@ds231961.mlab.com:31961/yelpcamp');
+
 app.use(express.static(__dirname + "/public"));
 app.set("view engine","ejs");
 var passport=require("passport");
